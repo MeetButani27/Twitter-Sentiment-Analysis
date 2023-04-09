@@ -1,10 +1,8 @@
 import tweepy
 import pandas as pd
-import configparser
 import re
 import matplotlib.pyplot as plt
 from textblob import TextBlob
-from wordcloud import WordCloud
 import streamlit as st
 import datetime, pytz
 
