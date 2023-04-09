@@ -7,7 +7,7 @@ from helper import preprocessing_data, graph_sentiment, analyse_mention, analyse
 st.set_page_config(
      page_title = "Twitter Sentiment analysis",
      page_icon = "🧊",
-     layout = "wide",
+     layout = "wide", 
      initial_sidebar_state = "expanded",
      menu_items = {
          'Get Help': 'https://github.com/everydaycodings/Data-Analysis-Web-App',
@@ -41,7 +41,7 @@ def usedlinks_chart(data):
     st.bar_chart(data["links"].value_counts().head(10).reset_index())
 
 def all_tweets(data):
-    st.subheader("All Tweets that containes top 10 links used")
+    st.subheader("All Tweets containing top 10 links used")
     filtered_data = data[data["links"].isin(data["links"].value_counts().head(10).reset_index()["index"].values)]
     st.write(filtered_data)
 
@@ -72,7 +72,7 @@ def display_data(data, analyse, mention, hastag):
 
     col1,col2,col3 = st.columns(3)
     with col2:
-        st.markdown("### EDA On the Data")
+        st.markdown("### Data Visualization")
 
 
     col1, col2 = st.columns(2)
@@ -89,10 +89,10 @@ def display_data(data, analyse, mention, hastag):
         usedlinks_chart(data)
         st.write(" ")
     with col4:
-        all_tweets(data)
+        sentiment_bar(analyse)
         st.write(" ")
     with col5:
-        sentiment_bar(analyse)
+        all_tweets(data)
         st.write(" ")
     with col6:
         sentiment_pie(data)

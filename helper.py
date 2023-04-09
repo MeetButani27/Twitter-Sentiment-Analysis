@@ -76,7 +76,7 @@ def getAnalysis(score):
   else:
     return 'Positive'
 
-@st.cache(allow_output_mutation=True)
+@st.cache_data()
 def preprocessing_data(word_query, number_of_tweets, function_option):
 
   if function_option == "Search By #Tag and Words":
