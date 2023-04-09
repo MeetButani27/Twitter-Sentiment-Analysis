@@ -41,7 +41,7 @@ def usedlinks_chart(data):
     st.bar_chart(data["links"].value_counts().head(10).reset_index())
 
 def all_tweets(data):
-    st.subheader("All the Tweets that containes top 10 links used")
+    st.subheader("All Tweets that containes top 10 links used")
     filtered_data = data[data["links"].isin(data["links"].value_counts().head(10).reset_index()["index"].values)]
     st.write(filtered_data)
 
@@ -81,16 +81,22 @@ def display_data(data, analyse, mention, hastag):
 
     with col1:
         mention_chart(mention)
+        st.write(" ")
     with col2:
         hastags_chart(hastag)
+        st.write(" ")
     with col3:
         usedlinks_chart(data)
+        st.write(" ")
     with col4:
         all_tweets(data)
+        st.write(" ")
     with col5:
         sentiment_bar(analyse)
+        st.write(" ")
     with col6:
         sentiment_pie(data)
+        st.write(" ")
     
 
 menu = {

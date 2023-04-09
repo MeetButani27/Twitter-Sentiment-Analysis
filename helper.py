@@ -32,9 +32,9 @@ emoji_pattern = re.compile("["
 
 def twitter_connection():
 
-    api_key = ''
-    api_key_secret =''
-    access_token = ''
+    api_key = 'G9kix2mEn808F5148b1r02ITy'
+    api_key_secret ='IjTxG4Yv0vDKZZ0PGg43GQq5wKrTxKbqPiR4zVXSsAPMl3lPCD'
+    access_token = '1607968569152925699-i03PB43JtRkZJcmo0kR0CrbbUPHGK8'
 
     auth = tweepy.OAuthHandler(api_key, api_key_secret)
     api = tweepy.API(auth)
